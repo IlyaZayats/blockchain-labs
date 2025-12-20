@@ -11,20 +11,11 @@ ADDRESS_PATH = "contract_address.txt"
 
 
 def pick_getter_function(contract):
-    """
-    Пытаемся найти подходящий getter без уточнений.
-    Частые варианты в учебных контрактах:
-      - getValue()
-      - retrieve()
-      - get()
-      - value() (public переменная value создаёт getter)
-    """
     candidates = ["getValue", "retrieve", "get", "value"]
     for name in candidates:
         if hasattr(contract.functions, name):
             return getattr(contract.functions, name)
 
-    # Если ни один не подошёл — покажем список доступных функций
     funcs = []
     for item in contract.abi:
         if item.get("type") == "function":

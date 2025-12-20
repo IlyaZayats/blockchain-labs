@@ -5,7 +5,6 @@ from web3 import Web3
 from web3.middleware import ExtraDataToPOAMiddleware
 
 
-# ====== НАСТРОЙКИ ======
 RPC_URL = "http://127.0.0.1:8545"
 
 PRIVATE_KEY = "63deeafcf9da6961401391817ddd36594d20884447d87fa3bb3d391077634a39"
@@ -17,7 +16,6 @@ ADDRESS_PATH = "contract_address.txt"
 INPUT_STRING = "hello world!"
 
 GAS_LIMIT = 200_000
-# =======================
 
 
 def build_fee_fields(w3: Web3) -> dict:
